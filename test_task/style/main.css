@@ -1,0 +1,147 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+
+/* Контейнер для таблицы */
+.table-container
+{
+	max-width: 1140px; /* Максимальный размер контейнера для ПК до разрешения экрана 1920х1080 и до ноутбуков */
+	margin: 50px auto 50px auto; /* Выравниваю блок по центру */
+	font-family: 'RobotoRegular'; /* Указываю используемый шрифт */
+}
+
+.main-table
+{
+	border-collapse: collapse; /* Обьединяю границы полей в таблице */
+	text-align: right;
+}
+
+/* Выравниваю содержимое горизонтальных заголовков по середине*/
+.main-table thead
+{
+	text-align: center;
+}
+
+/* Вертикальные заголовки таблицы */
+.left-title
+{
+	font-size: 30px;
+	font-weight: normal;
+	color: #676767;
+}
+
+/* Красная колонка */
+.red-column
+{
+	color: #e21d24;
+}
+
+/* Синяя колонка */
+.blue-column
+{
+	color: #019bd7;
+}
+
+/* Создаю контент полей красной колонки, формируя изображение */
+.border-r
+{
+	border: 10px solid #e21d24;
+}
+
+/* Создаю контент полей синей колонки, формируя изображение */
+.border-b
+{
+	border: 10px solid #019bd7;
+}
+
+/* Общие свойства изображений в полях таблицы */
+.border-r, .border-b
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 25px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 5px auto 5px auto;
+}
+
+/* Псевдо-класс для подсветки выбранного поля таблицы */
+.table-row:hover
+{
+	background: #cccccc;
+}
+
+/* Нижняя граница строк таблицы */
+.table-row-underline
+{
+	border-bottom: 3px solid #f5f5f5;
+}
+
+/* Подключаю шрифт */
+@font-face 
+{
+    font-family: 'RobotoRegular';
+    src: url('font/Roboto Regular.eot'); /* Для IE9s */
+    src: url('font/Roboto Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('font/Roboto Regular.woff2') format('woff2'), /* Самые современные браузеры */
+         url('font/Roboto Regular.woff') format('woff'), /* Современные браузеры */
+         url('font/Roboto Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('font/Roboto Regular.svg#svgFontName') format('svg'); /* устаревшие iOS */
+}
+
+/* Для экранов с разрешением выше 1920px */
+@media (min-width: 1921px)
+{
+	/* Меняю ширину контейнера таблицы, позволяя ей растянуться */
+	.table-container
+	{
+		max-width: 1650px;
+		padding: 0 60px 0 60px;
+	}
+
+    /* Меня шрифт для вертикальных заголовков таблицы */
+	.left-title
+	{
+		font-size: 45px;
+	}
+
+    /* Меняю размер блока с коэффициентом */
+    .border-r, .border-b
+    {
+    	width: 100px;
+    	height: 100px;
+    	font-size: 40px;
+    }
+
+    /* Меняю размер шрифта для горизонтальных заголовков таблицы */
+    .main-table thead
+    {
+    	font-size: 30px;
+    }
+}
+
+/* Для планшетов */
+@media (max-width: 768px)
+{
+	.table-container
+	{
+		max-width: none;
+		padding: 0 45px 0 45px;
+	}
+
+	.left-title
+	{
+		font-size: 20px;
+	}
+
+    .border-r, .border-b
+    {
+    	width: 45px;
+    	height: 45px;
+    	font-size: 15px;
+    }
+}
